@@ -7,7 +7,7 @@ gem 'rails-api'
 
 gem 'spring', :group => :development
 
-gem 'sqlite3'
+gem 'pg'
 
 gem 'has_scope', '~> 0.5.1'
 
