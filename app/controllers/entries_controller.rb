@@ -2,6 +2,7 @@ class EntriesController < ApplicationController
   wrap_parameters format: [:json]
   before_action :set_subject
   before_action :set_representer, only: [:index, :show, :update, :create]
+  before_filter :set_headers, only: :index
 
   def index
     respond_with(@representer)
@@ -72,6 +73,10 @@ class EntriesController < ApplicationController
       else
         Entry.order(score: :desc)
       end
+    end
+
+    def set_headers
+      response.headers['X-Total-Count'] = @entries.count.to_s
     end
 
     def sort_direction

@@ -29,10 +29,17 @@
                 "entries": [
                     {
                       "id": "1",
-                      "uri": "/features/online_form_signing/",
+                      "uri": "/entries/1/",
                       "name": "John Smith",
                       "email": john.smith@gmail.com,
                       "score": 100
+                    },
+                    {
+                      "id": "2",
+                      "uri": "/entries/2/",
+                      "name": "Ren Simmons",
+                      "email": rsimmo4@gmail.com,
+                      "score": 110
                     }
                 ]
             }
