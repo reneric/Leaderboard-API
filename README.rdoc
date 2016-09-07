@@ -38,7 +38,7 @@
                       "id": "2",
                       "uri": "/entries/2/",
                       "name": "Ren Simmons",
-                      "email": rsimmo4@gmail.com,
+                      "email": rsimmo412@gmail.com,
                       "score": 110
                     }
                 ]
