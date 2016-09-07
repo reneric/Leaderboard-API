@@ -1,28 +1,82 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Entries
 
-Things you may want to cover:
+## Entries [/entries/{?orderBy,direction}]
 
-* Ruby version
+### Get Entries [GET]
 
-* System dependencies
++ Parameters
+    + orderBy (string, `score`) ... The field in which to order entries
+        + Values
+            + `score`
+            + `email`
+            + `name`
+    + direction (string, `asc`) ... The direction in which to order entries
+        + Values
+            + `asc`
+            + `desc`
 
-* Configuration
++ Response 200 (application/json; charset=utf-8)
 
-* Database creation
+    + Headers
 
-* Database initialization
+            X-Total-Count: 1
 
-* How to run the test suite
+    + Body
 
-* Services (job queues, cache servers, search engines, etc.)
+            {
+                "entries": [
+                    {
+                      "id": "1",
+                      "uri": "/features/online_form_signing/",
+                      "name": "John Smith",
+                      "email": john.smith@gmail.com,
+                      "score": 100
+                    }
+                ]
+            }
 
-* Deployment instructions
+    + Schema
 
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+            {
+              "$schema": "http://json-schema.org/draft-04/schema#",
+              "type": "object",
+              "properties": {
+                "entries": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "uri": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "email": {
+                          "type": "string"
+                        },
+                        "score": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "uri",
+                        "name",
+                        "email",
+                        "score",
+                      ]
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "entries"
+              ]
+            }

@@ -68,7 +68,7 @@ class EntriesController < ApplicationController
 
     def load_entries
       if order_by_params_valid?
-        Entry.order("#{params[:order_by]} #{sort_direction || 'DESC'}")
+        Entry.order("#{translated_params[:order_by]} #{sort_direction || 'DESC'}")
       else
         Entry.order(score: :desc)
       end
@@ -81,8 +81,14 @@ class EntriesController < ApplicationController
     end
 
     def order_by_params_valid?
-      if params[:order_by]
-        %(name email score created_at).include? params[:order_by]
+      if translated_params[:order_by]
+        %(name email score created_at).include? translated_params[:order_by]
       end
+    end
+
+    def translated_params
+      {
+        order_by: params[:orderBy]
+      }
     end
 end
