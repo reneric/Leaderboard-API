@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::API
   include ActionController::ImplicitRender
   include ActionController::ParamsWrapper
-  respond_to :json
+  respond_to :json, :html
 
   class_attribute :build_actions, instance_writer: false
   self.build_actions = %w(new create)
