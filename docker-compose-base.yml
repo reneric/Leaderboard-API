@@ -1,0 +1,15 @@
+version: "2"
+
+services:
+  web:
+    build: .
+    command: bundle exec rails server -b 0.0.0.0
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/ember/app
+      - /usr/src/app/ember/bower_components
+      - /usr/src/app/ember/node_modules
+      - /usr/src/app/ember/tmp
+    env_file:
+      - env.ini
