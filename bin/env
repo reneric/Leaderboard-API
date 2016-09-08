@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
+    echo "Interactively create env.ini from env.example.ini"
+    exit
+fi
+
+while read -u 3 line ; do
+  if [[ $line != "#"* ]]; then
+      IFS='=' read -r key value <<< "$line"
+      if [[ ($value =~ ^\ +$ || -z $value) && ! ($key =~ ^\ +$ || -z $key) ]] ; then
+          {
+            echo -e "$key=\c"
+            read input
+          } 4>&1
+          echo "$key=$input" 1>&4
+      else
+        echo "$line" 1>&4
+      fi
+  else
+    echo "$line" 1>&4
+  fi
+done 3<$(pwd)/env.example.ini 4> $(pwd)/env.ini
+
+echo "env.ini created."

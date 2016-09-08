@@ -1,7 +1,10 @@
 class ApplicationController < ActionController::API
+  include ActionController::HttpAuthentication::Token::ControllerMethods
   include ActionController::ImplicitRender
   include ActionController::ParamsWrapper
-  respond_to :json, :html
+  before_action :authenticate
+  respond_to :json
+  TOKEN = Rails.configuration.api_authorization_token
 
   class_attribute :build_actions, instance_writer: false
   self.build_actions = %w(new create)
@@ -31,4 +34,29 @@ class ApplicationController < ActionController::API
       status: status
     )
   end
+
+  def render_error(message, errors: [], status: 422)
+    render(
+      json: { status: status, message: message, errors: errors },
+      status: status
+    )
+  end
+
+  protected
+    def authenticate
+      authenticate_token || render_unauthorized
+    end
+
+    def authenticate_token
+      authenticate_with_http_token do |token, options|
+        ActiveSupport::SecurityUtils.secure_compare(
+          ::Digest::SHA256.hexdigest(token),
+          ::Digest::SHA256.hexdigest(TOKEN)
+        )
+      end
+    end
+
+    def render_unauthorized
+      render_error("Unauthorized: Invalid Token", errors: ["Authorization error"], status: 401)
+    end
 end

@@ -1,0 +1,16 @@
+version: "2"
+
+services:
+  db:
+    image: postgres:9.4
+
+  web:
+    extends:
+      file: docker-compose-base.yml
+      service: web
+    ports:
+      - "9999:3000"
+    links:
+      - db
+    environment:
+      VIRTUAL_HOST: leaderboard.docker

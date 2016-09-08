@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
+    echo "Copies the 'env.example.ini' file to 'env.ini'."
+    exit
+fi
+
+echo "Creating default env.ini file"
+cp "env.example.ini" "env.ini"

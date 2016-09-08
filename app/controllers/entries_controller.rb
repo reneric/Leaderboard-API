@@ -13,7 +13,7 @@ class EntriesController < ApplicationController
   end
 
   def create
-    @entry = @representer.from_hash(entry_params)
+    @entry = @representer.from_hash(params)
     if @entry.save
       render_create_success(entry_path(@entry))
     else
@@ -22,7 +22,7 @@ class EntriesController < ApplicationController
   end
 
   def update
-    @entry = @representer.from_hash(entry_params)
+    @entry = @representer.from_hash(params)
     if @entry.save
       head :no_content
     else
