@@ -89,15 +89,15 @@ Use token `notasecrettoken` for the __Authorization__ header
             {
                 "entries": [
                     {
-                      "id": "1",
-                      "uri": "/entries/1/",
+                      "id": "cfae1ce3-0396-4772-b005-5d54db450c5c",
+                      "uri": "/entries/cfae1ce3-0396-4772-b005-5d54db450c5c/",
                       "name": "John Smith",
                       "email": "john.smith@gmail.com",
                       "score": 100
                     },
                     {
-                      "id": "2",
-                      "uri": "/entries/2/",
+                      "id": "96d666c3-c138-495e-9aa8-4cfed4a7d4bf",
+                      "uri": "/entries/96d666c3-c138-495e-9aa8-4cfed4a7d4bf/",
                       "name": "Ren Simmons",
                       "email": "rsimmo412@gmail.com",
                       "score": 110
@@ -152,7 +152,7 @@ Use token `notasecrettoken` for the __Authorization__ header
 ## Entry [/entries/{entryId}/]
 
 + Parameters
-    + entryId (string, `1123`) ... The id of the entry
+    + entryId (string, `96d666c3-c138-495e-9aa8-4cfed4a7d4bf`) ... The id of the entry
 
 ### Get Entry [GET]
 
@@ -161,8 +161,8 @@ Use token `notasecrettoken` for the __Authorization__ header
     + Body
 
               {
-                  "id": "1123",
-                  "uri": "/entries/1123/",
+                  "id": "96d666c3-c138-495e-9aa8-4cfed4a7d4bf",
+                  "uri": "/entries/96d666c3-c138-495e-9aa8-4cfed4a7d4bf/",
                   "name": "John Smith",
                   "email": "john.smith@gmail.com",
                   "score": 100,

@@ -60,7 +60,7 @@ class EntriesController < ApplicationController
     end
 
     def load_entry
-      @entry = Entry.find(params[:id])
+      @entry = Entry.find_by(uuid: params[:id])
     end
 
     def build_entry

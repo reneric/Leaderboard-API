@@ -1,5 +1,5 @@
 class EntryCollectionItemRepresenter < BaseObjectRepresenter
-  property :id
+  property :uuid, as: :id
   property :uri, writeable: false, exec_context: :decorator
   property :name
   property :email
