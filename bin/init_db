@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
+    echo "Migrate the database."
+    exit
+fi
+
+bundle exec rake db:migrate
