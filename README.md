@@ -25,7 +25,7 @@ Use token `notasecrettoken` for the __Authorization__ header
 
             {
                 "name": "John Smith",
-                "email": "john.smith@gmail.com",
+                "email": "john.smith@email.com",
                 "score": 100
             }
 
@@ -92,14 +92,14 @@ Use token `notasecrettoken` for the __Authorization__ header
                       "id": "cfae1ce3-0396-4772-b005-5d54db450c5c",
                       "uri": "/entries/cfae1ce3-0396-4772-b005-5d54db450c5c/",
                       "name": "John Smith",
-                      "email": "john.smith@gmail.com",
+                      "email": "john.smith@email.com",
                       "score": 100
                     },
                     {
                       "id": "96d666c3-c138-495e-9aa8-4cfed4a7d4bf",
                       "uri": "/entries/96d666c3-c138-495e-9aa8-4cfed4a7d4bf/",
                       "name": "Ren Simmons",
-                      "email": "rsimmo412@gmail.com",
+                      "email": "rsimmo412@email.com",
                       "score": 110
                     }
                 ]
@@ -164,7 +164,7 @@ Use token `notasecrettoken` for the __Authorization__ header
                   "id": "96d666c3-c138-495e-9aa8-4cfed4a7d4bf",
                   "uri": "/entries/96d666c3-c138-495e-9aa8-4cfed4a7d4bf/",
                   "name": "John Smith",
-                  "email": "john.smith@gmail.com",
+                  "email": "john.smith@email.com",
                   "score": 100,
                   "created": "2016-09-08T14:23:00.600Z"
               }
