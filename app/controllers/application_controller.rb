@@ -3,7 +3,7 @@ class ApplicationController < ActionController::API
   include ActionController::ImplicitRender
   include ActionController::ParamsWrapper
   before_action :authenticate
-  respond_to :json, :html
+  respond_to :json
   TOKEN = Rails.configuration.api_authorization_token
 
   class_attribute :build_actions, instance_writer: false
