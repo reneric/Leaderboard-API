@@ -156,6 +156,8 @@ Use token `notasecrettoken` for the __Authorization__ header
 
 ### Get Entry [GET]
 
+  **Requires valid token**
+
   + Response 200 (application/json)
 
     + Body
