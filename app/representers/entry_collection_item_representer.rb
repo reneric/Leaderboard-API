@@ -6,6 +6,6 @@ class EntryCollectionItemRepresenter < BaseObjectRepresenter
   property :score
 
   def uri
-    entry_path(represented, trailing_slash: true)
+    "/entries/#{represented.uuid}/"
   end
 end
