@@ -4,7 +4,7 @@
 
 [http://ren-leaderboard-api.herokuapp.com/entries/](http://ren-leaderboard-api.herokuapp.com/entries/)
 
-*Use token `notasecrettoken` for the **Authorization** header*
+*Use token `notasecrettoken` for the __Authorization__ header*
 
 # Entries
 
