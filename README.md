@@ -6,6 +6,9 @@
 
 Use token `notasecrettoken` for the __Authorization__ header
 
+## API Docs
+[http://docs.rensimmons.apiary.io/#entries](http://docs.rensimmons.apiary.io/#entries)
+
 # Entries
 
 ## Entry Creation [/entries/]
@@ -82,7 +85,7 @@ Use token `notasecrettoken` for the __Authorization__ header
 
     + Headers
 
-            X-Total-Count: 1
+            X-Total-Count: 2
 
     + Body
 
