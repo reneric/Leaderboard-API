@@ -1,5 +1,3 @@
-== README
-
 # Entries
 
 ## Entry Creation [/entries/]
