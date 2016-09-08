@@ -53,7 +53,8 @@ class ApplicationController < ActionController::API
           ::Digest::SHA256.hexdigest(token),
           ::Digest::SHA256.hexdigest(TOKEN)
         )
-      end || ActiveSupport::SecurityUtils.secure_compare(
+      end ||
+      ActiveSupport::SecurityUtils.secure_compare(
         ::Digest::SHA256.hexdigest(params[:token]),
         ::Digest::SHA256.hexdigest(TOKEN)
       )
