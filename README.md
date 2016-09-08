@@ -3,6 +3,7 @@
 ## Demo
 
 [http://ren-leaderboard-api.herokuapp.com/entries/](http://ren-leaderboard-api.herokuapp.com/entries/)
+
 *Use token `notasecrettoken` for the **Authorization** header*
 
 # Entries
