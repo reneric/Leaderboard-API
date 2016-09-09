@@ -9,7 +9,7 @@ gem 'spring', :group => :development
 
 gem 'pg'
 
-gem 'has_scope', '~> 0.5.1'
+gem 'has_scope', '~> 0.6.0'
 
 gem 'representable', '~> 2.1.8'
 

@@ -9,7 +9,7 @@ Bundler.require(*Rails.groups)
 module Leaderboard
   class Application < Rails::Application
     config.active_record.raise_in_transactional_callbacks = true
-
+    Dir[Rails.root.join('app', 'validations', "*.rb")].each {|l| require l }
     config.api_authorization_token = ENV.fetch('API_AUTHORIZATION_TOKEN', 'notasecret')
   end
 end
