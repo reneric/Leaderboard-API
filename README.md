@@ -63,7 +63,7 @@ Use token `notasecrettoken` for the __Authorization__ header
               ]
             }
 
-## Entries [/entries/{?orderBy,direction,limit}]
+## Entries [/entries/{?orderBy,direction,name,email,limit}]
 
 ### Get Entries [GET]
 
