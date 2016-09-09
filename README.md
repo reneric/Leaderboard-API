@@ -63,22 +63,25 @@ Use token `notasecrettoken` for the __Authorization__ header
               ]
             }
 
-## Entries [/entries/{?orderBy,direction}]
+## Entries [/entries/{?orderBy,direction,limit}]
 
 ### Get Entries [GET]
 
 **Requires valid token**
 
 + Parameters
-    + orderBy (string, `score`) ... The field in which to order entries
+    + orderBy (string, `score`) ... The field in which to order entries. Defaults to 'score'.
         + Values
             + `score`
             + `email`
             + `name`
-    + direction (string, `asc`) ... The direction in which to order entries
+    + direction (string, `asc`) ... The direction in which to order entries. Defaults to 'desc'.
         + Values
             + `asc`
             + `desc`
+    + name (string, `john`) ... A name query on entries.
+    + email (string, `john.smith@email.com`) ... An email query on entries.
+    + limit (string, `1`) ... The number of entries to return.
 
 
 + Response 200 (application/json; charset=utf-8)

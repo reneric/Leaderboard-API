@@ -1,8 +1,14 @@
 class EntriesController < ApplicationController
+  include Validate
   wrap_parameters format: [:json]
   before_action :set_subject
   before_action :set_representer, only: [:index, :show, :update, :create]
+  before_action :validate_query_params, only: :index
   before_filter :set_headers, only: :index
+
+  has_scope :by_email, as: 'email'
+  has_scope :by_name, as: 'name'
+  has_scope :with_limit, as: 'limit'
 
   def index
     respond_with(@representer)
@@ -68,32 +74,17 @@ class EntriesController < ApplicationController
     end
 
     def load_entries
-      if order_by_params_valid?
-        Entry.order("#{translated_params[:order_by]} #{sort_direction || 'DESC'}")
-      else
-        Entry.order(score: :desc)
-      end
+      @entry = apply_scopes(Entry).ordered(params[:order_by], params[:direction])
     end
 
     def set_headers
       response.headers['X-Total-Count'] = @entries.count.to_s
     end
 
-    def sort_direction
-      if params[:direction] and %(ASC DESC).include? params[:direction].upcase
-        params[:direction].upcase
+    def validate_query_params
+        query_params = Validate::QueryParams.new(params)
+        if !query_params.valid?
+          render_error("Invalid query.", errors: query_params.errors, status: 400)
+        end
       end
-    end
-
-    def order_by_params_valid?
-      if translated_params[:order_by]
-        %(name email score created_at).include? translated_params[:order_by]
-      end
-    end
-
-    def translated_params
-      {
-        order_by: params[:orderBy]
-      }
-    end
 end
