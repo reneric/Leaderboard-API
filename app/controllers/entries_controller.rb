@@ -82,9 +82,9 @@ class EntriesController < ApplicationController
     end
 
     def validate_query_params
-        query_params = Validate::QueryParams.new(params)
-        if !query_params.valid?
-          render_error("Invalid query.", errors: query_params.errors, status: 400)
-        end
+      query_params = Validate::QueryParams.new(params)
+      if !query_params.valid?
+        render_error("Invalid query.", errors: query_params.errors, status: 400)
       end
+    end
 end
