@@ -1,5 +1,16 @@
-<ul>
-{{#each entries as |entry|}}
-  <li><p>{{entry.name}}</p></li>
-{{/each}}
-</ul>
+<table>
+  <thead>
+    <th></th>
+    <th>Time</th>
+    <th>Name</th>
+  </thead>
+  <tbody>
+    {{#each entries as |entry index|}}
+      <tr>
+        <td>{{place index}}</td>
+        <td>{{entry.score}}</td>
+        <td>{{entry.name}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
