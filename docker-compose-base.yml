@@ -13,3 +13,12 @@ services:
       - /usr/src/app/ember/tmp
     env_file:
       - env.ini
+
+  ember:
+    build: ember
+    volumes:
+      - ./ember:/usr/src/app
+      - /usr/src/app/bower_components
+      - /usr/src/app/node_modules
+    environment:
+      TZ: America/Chicago

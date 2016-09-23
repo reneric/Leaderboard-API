@@ -12,6 +12,9 @@ RUN apt-get install -y nodejs
 ## Clean apt-get
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+RUN apt-get install -y make
+RUN apt-get install -y wget git-core
+
 RUN gem install bundler -v 1.8.4 --no-ri --no-rdoc
 
 ENV PORT 3000
@@ -27,6 +30,9 @@ ADD Gemfile /usr/src/app/
 ADD Gemfile.lock /usr/src/app/
 RUN sudo chown -R app /usr/src/app
 RUN bundle install
+
+ENV APP_ROOT /usr/src/app
+ENV WATCHMAN_INSTALL /usr/src/watchman
 
 # Add application source
 ADD . /usr/src/app

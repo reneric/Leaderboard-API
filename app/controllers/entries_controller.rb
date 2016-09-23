@@ -1,4 +1,4 @@
-class EntriesController < ApplicationController
+class EntriesController < ApiController
   include Validate
   wrap_parameters format: [:json]
   before_action :set_subject

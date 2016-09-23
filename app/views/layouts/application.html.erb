@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Leaderboard</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+  <%= javascript_include_tag 'https://cdn.polyfill.io/v2/polyfill.min.js?features=es5,fetch,Intl.~locale.en' %>
+  <%= javascript_include_tag ember_asset_url('assets/vendor.js') %>
+  <%= javascript_include_tag ember_asset_url('assets/frontend.js') %>
+</body>
+</html>

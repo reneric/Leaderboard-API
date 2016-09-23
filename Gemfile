@@ -1,18 +1,25 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.2.5.1'
 
-gem 'rails-api'
+gem 'pg', '~> 0.15'                              # Use postgresql as the database for Active Record
 
-gem 'spring', :group => :development
+gem 'sass-rails', '~> 5.0'                       # Use SCSS for stylesheets
 
-gem 'pg'
+gem 'uglifier', '>= 1.3.0'                       # Use Uglifier as compressor for JavaScript assets
 
-gem 'has_scope', '~> 0.6.0'
+gem 'jquery-rails'                               # Use jquery as the JavaScript library
 
-gem 'representable', '~> 2.1.8'
+gem 'turbolinks'                                 # Turbolinks makes following links in your web application faster.
 
-gem 'responders', '~> 2.0'
+gem 'spring', :group => :development            # Rails application preloader.
 
-gem 'rack-cors', :require => 'rack/cors'
+gem 'has_scope', '~> 0.6.0'                     # Map incoming controller parameters to named scopes in your resources
+
+gem 'representable', '~> 2.1.8'                 # Maps Ruby objects to documents and back.
+
+gem 'responders', '~> 2.0'                      # A set of responders modules to dry up your Rails 4.2+ app.
+
+gem 'rack-cors', :require => 'rack/cors'        # Support for Cross-Origin Resource Sharing (CORS) for Rack compatible web applications.
+
+

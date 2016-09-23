@@ -14,3 +14,11 @@ services:
       - db
     environment:
       VIRTUAL_HOST: leaderboard.docker
+
+  ember:
+    extends:
+      file: docker-compose-base.yml
+      service: ember
+    ports:
+      - "3000:4200"
+      - "49152:49152"
