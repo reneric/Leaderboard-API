@@ -1,4 +1,4 @@
-FROM reneric/baserubynode:1.2
+FROM reneric/baserubynode:latest
 MAINTAINER Ren Simmons <rsimmo4@gmail.com>
 ## Prepare
 RUN apt-get update

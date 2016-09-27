@@ -1,4 +1,4 @@
-FROM reneric/basenode
+FROM reneric/basenode:latest
 MAINTAINER Ren Simmons <rsimmo4@gmail.com>
 # PhantomJS dependencies
 RUN apt-get update \
