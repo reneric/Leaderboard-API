@@ -22,4 +22,4 @@ gem 'responders', '~> 2.0'                      # A set of responders modules to
 
 gem 'rack-cors', :require => 'rack/cors'        # Support for Cross-Origin Resource Sharing (CORS) for Rack compatible web applications.
 
-
+gem 'puma'
