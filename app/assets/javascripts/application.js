@@ -11,6 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+//= require frontend.js
+//= require vender.js
+//= require frontend
+//= require vender
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
