@@ -21,7 +21,8 @@ HOST: https://unilever-leaderboard-api.herokuapp.com/
             {
                 "name": "John Smith",
                 "email": "john.smith@email.com",
-                "score": 100
+                "score": 100,
+                "location": "Baton Rouge, LA",
             }
 
   + Response 201 (application/json)
@@ -91,14 +92,16 @@ HOST: https://unilever-leaderboard-api.herokuapp.com/
                       "uri": "/entries/cfae1ce3-0396-4772-b005-5d54db450c5c/",
                       "name": "John Smith",
                       "email": "john.smith@email.com",
-                      "score": 100
+                      "score": 100,
+                      "location": "New Orleans, LA"
                     },
                     {
                       "id": "96d666c3-c138-495e-9aa8-4cfed4a7d4bf",
                       "uri": "/entries/96d666c3-c138-495e-9aa8-4cfed4a7d4bf/",
                       "name": "Ren Simmons",
                       "email": "rsimmo412@email.com",
-                      "score": 110
+                      "score": 110,
+                      "location": "Baton Rouge, LA"
                     }
                 ]
             }
@@ -129,6 +132,12 @@ HOST: https://unilever-leaderboard-api.herokuapp.com/
                         },
                         "score": {
                           "type": "number"
+                        },
+                        "location": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         }
                       },
                       "required": [
@@ -137,6 +146,7 @@ HOST: https://unilever-leaderboard-api.herokuapp.com/
                         "name",
                         "email",
                         "score",
+                        "location",
                       ]
                     }
                   ]
@@ -166,6 +176,7 @@ HOST: https://unilever-leaderboard-api.herokuapp.com/
                   "name": "John Smith",
                   "email": "john.smith@email.com",
                   "score": 100,
+                  "location": "Baton Rouge, LA",
                   "created": "2016-09-08T14:23:00.600Z"
               }
 
@@ -190,6 +201,12 @@ HOST: https://unilever-leaderboard-api.herokuapp.com/
                     "score": {
                       "type": "number"
                     },
+                    "location": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
                     "created": {
                       "type": "number"
                     }
@@ -201,6 +218,7 @@ HOST: https://unilever-leaderboard-api.herokuapp.com/
                     "name",
                     "email",
                     "score",
+                    "location",
                     "created"
                   ]
                 }
