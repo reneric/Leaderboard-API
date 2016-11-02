@@ -4,7 +4,7 @@ class EntryCollectionItemRepresenter < BaseObjectRepresenter
   property :name
   property :email
   property :score
-  property :location
+  property :location, render_nil: true
 
   def uri
     "/entries/#{represented.uuid}/"
