@@ -7,10 +7,9 @@ HOST: https://unilever-leaderboard-api.herokuapp.com/
 
 ### Create Entry [POST]
 
-  **Requires valid token**
+**Requires valid token**
 
-  + Request (application/json)
-
++ Request (application/json)
 
     + Headers
 
@@ -25,36 +24,36 @@ HOST: https://unilever-leaderboard-api.herokuapp.com/
                 "location": "Baton Rouge, LA",
             }
 
-  + Response 201 (application/json)
++ Response 201 (application/json)
 
-      + Body
+    + Body
 
-            {
-              "status": 201,
-              "message": "Entry successfully created."
-            }
+          {
+            "status": 201,
+            "message": "Entry successfully created."
+          }
 
-      + Schema
+    + Schema
 
-            {
-              "type": "object",
-              "$schema": "http://json-schema.org/draft-04/schema#",
-              "name": "Status Object",
-              "description": "Schema for a server status object.",
-              "properties": {
-                "message": {
-                  "type": "string"
-                },
-                "status": {
-                  "type": "integer",
-                  "value": 201
-                }
+          {
+            "type": "object",
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "name": "Status Object",
+            "description": "Schema for a server status object.",
+            "properties": {
+              "message": {
+                "type": "string"
               },
-              "required": [
-                "message",
-                "status"
-              ]
-            }
+              "status": {
+                "type": "integer",
+                "value": 201
+              }
+            },
+            "required": [
+              "message",
+              "status"
+            ]
+          }
 
 ## Entries [/entries/{?orderBy,direction,name,email,limit}]
 
@@ -164,9 +163,9 @@ HOST: https://unilever-leaderboard-api.herokuapp.com/
 
 ### Get Entry [GET]
 
-  **Requires valid token**
+**Requires valid token**
 
-  + Response 200 (application/json)
++ Response 200 (application/json)
 
     + Body
 
